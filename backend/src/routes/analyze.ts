@@ -4,7 +4,7 @@ import {Router} from "express";
 
 
 // Multer handles files uploaded from the forntend. It will basically handle the audio recording
-import {multer} from "multer";
+import multer from "multer";
 import {analyzeAudio} from "../controllers/analyzeController"; // handles audio 
 
 
@@ -29,7 +29,7 @@ router.post(
     // has to match what the frontend sends
 
     //After Multer processes the file, use req.file to access it
-    upload.single("audio");
+    upload.single("audio"),
 
     //analyzeAudio will check if audio file exists, upload the file, send to sound classifier, get AI Prediction
     // And return result to frontend 
