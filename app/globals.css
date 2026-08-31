@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes hs-pulse-ring {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.5)); }
+  50% { transform: scale(1.12); filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.6)); }
+}
+.animate-hs-pulse-ring {
+  animation: hs-pulse-ring 0.9s ease-in-out infinite;
+}
+
+@keyframes hs-knock {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  20% { transform: translateY(-6px) rotate(-4deg); }
+  35% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(4deg); }
+  65% { transform: translateY(0) rotate(0deg); }
+}
+.animate-hs-knock {
+  animation: hs-knock 1.4s ease-in-out infinite;
+}
+
+@keyframes hs-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+.animate-hs-sway {
+  animation: hs-sway 1.6s ease-in-out infinite;
+  transform-origin: 50% 0%;
+}
+
+@keyframes hs-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+.animate-hs-shake {
+  animation: hs-shake 0.7s ease-in-out infinite;
+}
